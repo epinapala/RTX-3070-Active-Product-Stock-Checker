@@ -162,7 +162,7 @@ def newEgg():
             product_code = sub_key[0:2] + '-' + sub_key[2:5] + '-' + sub_key[5:]
             x = requests.get("https://www.newegg.com/product/api/ProductRealtime?ItemNumber=" + product_code, headers=headers)
             stockstatus = x.json()
-            print(stockstatus)
+            
             if stockstatus['MainItem']['Stock'] == 0:
                 #print(value, '| Out of Stock')
                 nestock_dict[value] = 'Out of Stock'
